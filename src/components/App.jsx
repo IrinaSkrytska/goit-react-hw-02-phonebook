@@ -1,15 +1,27 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-    </div>
-  );
+import { Component } from "react";
+import ContactForm from "./ContactForm";
+import { nanoid } from 'nanoid';
+
+
+export class App extends Component {
+ state = {
+  contacts: [],
+  name: ''
+ }
+  
+  formSubmitHandler = ({ name, number }) => {
+    const { contacts } = this.state;
+    const id = nanoid();
+    
+
+  }
+
+  
+  render() {
+    return (
+      <>
+        <ContactForm onSubmit={this.formSubmitHandler} />
+      </>
+    )
+  }
 };
